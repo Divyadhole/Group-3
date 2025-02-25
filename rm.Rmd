@@ -50,7 +50,7 @@ colSums(is.na(data))  # Missing values per column
 ```
 ```{r}
 cleaned_data <- na.omit(data) #remove missing values
-cleaned_data <- data %>% distinct()  # remove duplicates
+cleaned_data <- data %>% distinct()  # remove duplicates ..
 
 ```
 
