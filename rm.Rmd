@@ -49,12 +49,33 @@ colSums(is.na(data))  # Missing values per column
 
 ```
 ```{r}
-cleaned_data <- na.omit(data) #remove missing values
-cleaned_data <- data %>% distinct()  # remove duplicates ..
+colnames(data)
+
+
+
+```
+
+
+
+```{r}
+#cleaned_data <- na.omit(data) #remove missing values
+#cleaned_data <- data %>% distinct()  # remove duplicates ..
 
 ```
 
 ```{r}
+# Grouping by primary attack type and summarizing attack counts
+attack_summary <- data %>%
+  group_by(attacktype1_txt) %>%
+  summarise(
+    total_attacks = n(),
+    avg_kills = mean(nkill, na.rm = TRUE),  # Average number of fatalities per attack type
+    avg_wounded = mean(nwound, na.rm = TRUE)  # Average number of wounded per attack type
+  ) %>%
+  arrange(desc(total_attacks))  # Sort in descending order
+
+# View summary
+print(attack_summary)
 
 
 ```
