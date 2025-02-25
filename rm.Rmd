@@ -35,4 +35,30 @@ head(data)  s
 
 
 ```
+```{r}
+library(dplyr)   
+library(tidyr)  
+library(ggplot2) 
+```
+
+```{r}
+
+# Check for missing values
+sum(is.na(data))  # Total missing values
+colSums(is.na(data))  # Missing values per column
+
+```
+```{r}
+cleaned_data <- na.omit(data) #remove missing values
+cleaned_data <- data %>% distinct()  # remove duplicates
+
+```
+
+```{r}
+
+
+```
+
+
+
 
