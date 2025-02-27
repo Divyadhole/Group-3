@@ -114,7 +114,7 @@ interactive_plot
 library(ggplot2)  # Load the ggplot2 package
 
 ggplot(attack_summary, aes(x = reorder(attacktype1_txt, -total_attacks), y = total_attacks)) +
-  geom_bar(stat = "identity", fill = "steelblue") +
+  geom_bar(stat = "identity", fill = "lavender") +
   labs(
     title = "Most Common Attack Types",
     x = "Attack Type",
